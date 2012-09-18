@@ -4,6 +4,6 @@ Ext.Loader.setConfig({
 
 Ext.application({
     name: 'Example',
-    appFolder: '/extjs/cookbook/ex1a/app',
+    appFolder: '/extjs-experiments/cookbook/ex1a/app',
     autoCreateViewport: true
 });
