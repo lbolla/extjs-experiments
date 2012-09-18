@@ -98,6 +98,8 @@ Ext.define('Example.view.Chart', {
     height: 400,
     closable: true,
     collapsible: true,
+    resizable: true,
+    draggable: true,
     layout: 'fit',
     style: 'margin: 10px',
     items: [{
@@ -127,8 +129,10 @@ Ext.define('Example.view.Chart', {
         }
     }],
     renderTo: Ext.getBody(),
+    stateful: true,
 
     initComponent: function() {
+        this.stateId = 'chart-ex4b-' + this.chartId;
         this.on({
             'collapse': function() {
                 var chart = this.ownerCt.down('chart');
