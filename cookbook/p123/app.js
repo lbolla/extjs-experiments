@@ -42,6 +42,7 @@ Ext.onReady(function() {
                     tabPanel.add({
                         title: nodeText,
                         bodyPadding: 10,
+                        closable: true,
                         html: nodeText
                     });
                     tabIndex = tabBar.items.length - 1;
