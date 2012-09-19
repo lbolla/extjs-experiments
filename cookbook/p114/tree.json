@@ -1,0 +1,19 @@
+{
+    "success": true,
+    "data": [{
+        "text": "UK",
+        "data": [{
+            "text": "London",
+            "leaf": true
+        }, {
+            "text": "Edinburgh",
+            "leaf": true
+        }],
+    }, {
+        "text": "Paris",
+        "leaf": true
+    }, {
+        "text": "Copenhagen",
+        "leaf": true
+    }]
+}

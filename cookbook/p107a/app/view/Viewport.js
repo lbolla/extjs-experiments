@@ -70,7 +70,10 @@ Ext.define('Example.view.TwoByTwo', {
 Ext.define('Example.view.ContentPanel', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.contentPanel',
+    deferredRender: true,
     items: [{
+        xtype: 'twobytwo'
+    }, {
         xtype: 'twobytwo'
     }]
 });
