@@ -16,13 +16,16 @@ Ext.define('Example.view.Invoices', {
             }
         });
 
-        Ext.TaskManager.start({
-            run: function() { 
-                this.store.load();
-            },
-            interval: 1000,
-            scope: this
+        this.updater = Ext.create('Example.controller.Updater', {
+            action: {
+                run: function() { 
+                    this.store.load();
+                },
+                interval: 1000,
+                scope: this
+            }
         });
+        this.updater.start();
 
         this.callParent();
     }

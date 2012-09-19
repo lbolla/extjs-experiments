@@ -4,9 +4,14 @@ Ext.Loader.setConfig({
 
 Ext.Loader.setPath('Example', '/extjs-experiments/cookbook/p107a/app');
 Ext.require('Example.store.Chart');
+Ext.require('Example.store.Invoices');
 
 Ext.application({
     name: 'Example',
     appFolder: '/extjs-experiments/cookbook/p107a/app',
-    autoCreateViewport: true
+    autoCreateViewport: true,
+
+    controllers: [
+        'Updater'
+    ]
 });
