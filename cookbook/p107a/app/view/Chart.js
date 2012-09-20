@@ -52,6 +52,7 @@ Ext.define('Example.view.ChartWidget', {
 Ext.define('Example.view.Chart', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.my_chart',
+
     title: 'Nice graph',
     width: 600,
     height: 400,

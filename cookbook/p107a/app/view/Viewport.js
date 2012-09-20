@@ -1,6 +1,7 @@
 Ext.define('Example.view.MainMenu', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.mainMenu',
+
     margins: '0 5 0 5',
     width: 200,
     layout: 'accordion',
@@ -19,10 +20,7 @@ Ext.define('Example.view.MainMenu', {
 Ext.define('Example.view.TwoByTwo', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.twobytwo',
-    requires: [
-        'Example.view.Chart',
-        'Example.view.Invoices'
-    ],
+
     title: 'TwoByTwo',
     layout: {
         type: 'hbox',
@@ -70,6 +68,7 @@ Ext.define('Example.view.TwoByTwo', {
 Ext.define('Example.view.ContentPanel', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.contentPanel',
+
     deferredRender: true,
     items: [{
         xtype: 'twobytwo'
