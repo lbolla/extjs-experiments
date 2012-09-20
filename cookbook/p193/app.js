@@ -4,7 +4,6 @@ Ext.onReady(function() {
         extend: 'Ext.form.Panel',
 
         width: 600,
-        height: 400,
         style: 'margin: 10',
 
         tbar: [{
@@ -66,6 +65,40 @@ Ext.onReady(function() {
                 }
 
                 this.add(checkboxGroup);
+
+                var store = Ext.create('Ext.data.Store', {
+                    fields: ['fullName', 'userID', 'selected'],
+                    data: json.recipients
+                });
+
+                var combobox = {
+                    xtype: 'combobox',
+                    fieldLabel: 'Recipients',
+                    name: 'recipients',
+                    displayField: 'fullName',
+                    valueField: 'userID',
+                    queryMode: 'local',
+                    typeAhead: true,
+                    store: store,
+                    listConfig: {
+                        getInnerTpl: function() {
+                            return '<h3>{fullName}</h3>' +
+                                '<div>UserID {userID}</div>';
+                        }
+                    }
+                };
+
+                this.add(combobox);
+
+                this.add({
+                    xtype: 'container',
+                    layout: 'fit',
+                    items: [{
+                        xtype: 'htmleditor',
+                        name: 'fulltext',
+                        value: response.responseText
+                    }]
+                });
 
             } else {
                 Ext.MessageBox.alert('Error', 'Failed to decode json');
