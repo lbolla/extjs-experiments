@@ -1,0 +1,24 @@
+{
+    "success": true,
+    "recipients": [{
+        "fullName": "John Petrucci",
+        "userID": 1,
+        "selected": true
+    }, {
+        "fullName": "Mike Portnoy",
+        "userID": 2,
+        "selected": false
+    }, {
+        "fullName": "Ozzy Osborne",
+        "userID": 3,
+        "selected": false
+    }, {
+        "fullName": "Steve Vai",
+        "userID": 4,
+        "selected": false
+    }, {
+        "fullName": "Joe Satriani",
+        "userID": 5,
+        "selected": true
+    }]
+}
