@@ -1,5 +1,6 @@
 Ext.Loader.setConfig({
     enabled: true
+//    enabled: false
 });
 
 Ext.Loader.setPath('Example', '/extjs-experiments/cookbook/p107a/app');
@@ -7,7 +8,11 @@ Ext.require([
             'Ext.layout.*',
             'Ext.tab.Panel',
             'Ext.chart.*',
-            'Example.*'
+            'Example.controller.Updater',
+            'Example.store.Invoices',
+            'Example.store.Chart',
+            'Example.view.Invoices',
+            'Example.view.Chart'
 ]);
 
 Ext.application({
