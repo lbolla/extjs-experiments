@@ -1,0 +1,22 @@
+{
+    "success": true,
+    "books": [{
+        "Title": "Alice in Wonderland",
+        "ISBN": "123-456",
+        "authors": [{
+            "FirstName": "Lewis",
+            "LastName": "Carrol",
+            "addresses": [{
+                "City": "Oxford"
+            }]
+        }, {
+            "FirstName": "L",
+            "LastName": "B",
+            "addresses": [{
+                "City": "London"
+            }, {
+                "City": "Verona"
+            }]
+        }]
+    }]
+}
