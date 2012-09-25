@@ -31,11 +31,6 @@ Ext.onReady(function() {
         renderTo: Ext.getBody()
     });
 
-    function periodically(f, timeout) {
-        f();
-        Ext.defer(function() { periodically(f, timeout); }, timeout);
-    }
-
     Ext.TaskManager.start({
         run: function() { invoiceStore.load(); },
         interval: 1000
