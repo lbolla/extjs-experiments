@@ -29,6 +29,11 @@ Ext.onReady(function() {
             Date: '1975-11-02',
             Amount: 999,
             Status: 'Draft'
+        }, {
+            Client: 'Mohammed Ali',
+            Date: '197?-??-??',
+            Amount: -1,
+            Status: 'Draft'
         }]
     });
 
@@ -55,7 +60,7 @@ Ext.onReady(function() {
         valueField: 'Status',
         store: statuses,
         listeners: {
-            'select': function(combo, records, opts) {
+            select: function(combo, records, opts) {
                 var store = grid.getStore();
                 store.clearFilter();
                 if (records.length > 0 && records[0].get('Status') !== 'All') {
@@ -65,10 +70,26 @@ Ext.onReady(function() {
         }
     });
 
+    var searchTextField = Ext.create('Ext.form.field.Text', {
+        fieldLabel: 'Client Search',
+        enableKeyEvents: true,
+        listeners: {
+            keyup: {
+                fn: function(field, e) {
+                    var val = field.getValue().toLowerCase();
+                    grid.getStore().filterBy(function(record) {
+                        return record.get('Client').toLowerCase().indexOf(val) !== -1;
+                    });
+                },
+                buffer: 250
+            }
+        }
+    });
+
     var grid = Ext.create('Ext.grid.Panel', {
         title: 'GridPanel',
         width: 600,
-        tbar: [filterCombo],
+        tbar: [filterCombo, searchTextField],
         store: invoices,
         columns: [{
             header: 'Client',
