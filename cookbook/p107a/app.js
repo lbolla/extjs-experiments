@@ -1,8 +1,3 @@
-Ext.Loader.setConfig({
-    enabled: true
-//    enabled: false
-});
-
 Ext.Loader.setPath('Example', '/extjs-experiments/cookbook/p107a/app');
 Ext.require([
             'Ext.layout.*',

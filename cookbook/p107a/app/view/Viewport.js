@@ -21,11 +21,6 @@ Ext.define('Example.view.TwoByTwo', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.twobytwo',
 
-//    requires: [
-//        'Example.view.Invoices',
-//        'Example.view.Chart'
-//    ],
-
     title: 'TwoByTwo',
     layout: {
         type: 'hbox',
