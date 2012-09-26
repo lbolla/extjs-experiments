@@ -2,12 +2,12 @@ Ext.define('Widget.view.Viewport', {
     extend: 'Ext.container.Viewport',
 
     requires: [
-        'Widget.view.WidgetGrid'
+        'Widget.view.Page'
     ],
 
     layout: 'fit',
     items: [{
-        xtype: 'WidgetGrid'
+        xtype: 'Page'
     }]
 
 });

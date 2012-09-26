@@ -3,7 +3,7 @@ Ext.define('Widget.view.WidgetGrid', {
     alias: 'widget.WidgetGrid',
 
     title: 'Widget',
-    style: 'margin: 50;',
+    style: 'margin: 5;',
 
     columns: [],
 

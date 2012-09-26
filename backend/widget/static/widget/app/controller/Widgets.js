@@ -2,15 +2,11 @@ Ext.define('Widget.controller.Widgets', {
     extend: 'Ext.app.Controller',
 
     refs: [{
-        ref: 'widgetGrid',
-        selector: 'WidgetGrid'
-    }, {
         ref: 'widgetFormWindow',
         selector: 'WidgetFormWindow'
     }],
 
     init: function() {
-        console.log('Controller init');
         this.control({
             'WidgetGrid button[action="refresh"]': {
                 click: this.onRefreshButtonClick
@@ -31,8 +27,10 @@ Ext.define('Widget.controller.Widgets', {
     },
 
     onRefreshButtonClick: function(button) {
-        this.getWidgetGrid().getStore().load();
+        button.up('grid').getStore().load();
     },
+
+    selectedGrid: null,
 
     onAddColumnButtonClick: function(button) {
 
@@ -42,6 +40,7 @@ Ext.define('Widget.controller.Widgets', {
                 formXType: 'WidgetFormAddColumn'
             });
         }
+        this.selectedGrid = button.up('grid');
         win.show();
     },
 
@@ -51,9 +50,10 @@ Ext.define('Widget.controller.Widgets', {
         if (!win) {
             win = Ext.create('Widget.view.WidgetFormWindow', {
                 formXType: 'WidgetFormRemoveColumn',
-                store: this.getWidgetGrid().getStore()
+                store: button.up('grid').getStore()
             });
         }
+        this.selectedGrid = button.up('grid');
         win.show();
     },
 
@@ -62,8 +62,9 @@ Ext.define('Widget.controller.Widgets', {
             url: '/backend/widget/addColumn',
             params: button.up('form').getValues(),
             success: function(response) {
-                this.getWidgetGrid().getStore().load();
+                this.selectedGrid.getStore().load();
                 this.getWidgetFormWindow().close();
+                this.selectedGrid = null;
             },
             scope: this
         });
@@ -74,8 +75,9 @@ Ext.define('Widget.controller.Widgets', {
             url: '/backend/widget/removeColumn',
             params: button.up('form').getValues(),
             success: function(response) {
-                this.getWidgetGrid().getStore().load();
+                this.selectedGrid.getStore().load();
                 this.getWidgetFormWindow().close();
+                this.selectedGrid = null;
             },
             scope: this
         });

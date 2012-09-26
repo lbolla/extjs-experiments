@@ -3,7 +3,8 @@ Ext.application({
     autoCreateViewport: true,
 
     controllers: [
-        'Widgets'
+        'Widgets',
+        'Page'
     ],
 
     launch: function() {

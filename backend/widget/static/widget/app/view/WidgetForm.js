@@ -35,7 +35,10 @@ Ext.define('Widget.view.WidgetFormRemoveColumn', {
 
     initComponent: function() {
         var fields = [];
-        Ext.each(this.store.model.getFields(), function(field) {
+        tmp = this.store;
+        // Note: cloned grids have empty model!
+//        Ext.each(this.store.model.getFields(), function(field) {
+        Ext.each(this.store.getAt(0).fields.items, function(field) {
             if (field.name !== 'id') {
                 fields.push(field.name);
             }
