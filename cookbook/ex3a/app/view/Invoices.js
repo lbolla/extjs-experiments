@@ -7,7 +7,6 @@ Ext.define('Example.view.Invoices', {
     height: 400,
     columns: [],
     style: 'margin: 10px',
-    renderTo: Ext.getBody(),
 
     initComponent: function() {
 
